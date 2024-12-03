@@ -13,7 +13,7 @@ cargo run --release --bin day01
 |Puzzle|Part 1|Part 2|
 |:-:|:-:|:-:|
 |[Day 1: Historian Hysteria](https://adventofcode.com/2024/day/1)|:heavy_check_mark:|:heavy_check_mark:|
-|Day 2|:x:|:x:|
+|[Day 2: Red-Nosed Reports](https://adventofcode.com/2024/day/2)|:heavy_check_mark:|:heavy_check_mark:|
 |Day 3|:x:|:x:|
 |Day 4|:x:|:x:|
 |Day 5|:x:|:x:|
