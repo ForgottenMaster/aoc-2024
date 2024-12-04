@@ -92,7 +92,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_part_1() {
+    fn test_day_3_part_1() {
         const INPUT: &str =
             "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))";
         const EXPECTED: IntegerType = 161;
@@ -101,7 +101,7 @@ mod tests {
     }
 
     #[test]
-    fn test_part_2() {
+    fn test_day_3_part_2() {
         const INPUT: &str =
             "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))";
         const EXPECTED: IntegerType = 48;
