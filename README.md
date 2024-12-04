@@ -3,10 +3,22 @@ Repository of solutions for advent of code 2024
 
 In order to run these, first install the Rust toolchain which can be done easily with [Rustup](https://rustup.rs/)
 
-Then, each day is located in its own binary which can be run with (for example, day 1):
+You can run all the solutions by using the following:
 
 ```
-cargo run --release --bin day01
+cargo run --release
+```
+
+In order to run a particular day though, use the cargo-aoc binary. This can be installed with:
+
+```
+cargo install cargo-aoc
+```
+
+Once installed, a particular day can be run with:
+
+```
+cargo aoc -d <day-number>
 ```
 
 # Progress
