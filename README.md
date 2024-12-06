@@ -28,7 +28,7 @@ cargo aoc -d <day-number>
 |[Day 2: Red-Nosed Reports](https://adventofcode.com/2024/day/2)|:heavy_check_mark:|:heavy_check_mark:|
 |[Day 3: Mull It Over](https://adventofcode.com/2024/day/3)|:heavy_check_mark:|:heavy_check_mark:|
 |[Day 4: Ceres Search](https://adventofcode.com/2024/day/4)|:heavy_check_mark:|:heavy_check_mark:|
-|Day 5|:x:|:x:|
+|[Day 5: Print Queue](https://adventofcode.com/2024/day/5)|:heavy_check_mark:|:heavy_check_mark:|
 |Day 6|:x:|:x:|
 |Day 7|:x:|:x:|
 |Day 8|:x:|:x:|
