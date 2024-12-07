@@ -30,7 +30,7 @@ cargo aoc -d <day-number>
 |[Day 4: Ceres Search](https://adventofcode.com/2024/day/4)|:heavy_check_mark:|:heavy_check_mark:|
 |[Day 5: Print Queue](https://adventofcode.com/2024/day/5)|:heavy_check_mark:|:heavy_check_mark:|
 |[Day 6: Guard Gallivant](https://adventofcode.com/2024/day/6)|:heavy_check_mark:|:heavy_check_mark:|
-|Day 7|:x:|:x:|
+|[Day 7: Bridge Repair](https://adventofcode.com/2024/day/7)|:heavy_check_mark:|:heavy_check_mark:|
 |Day 8|:x:|:x:|
 |Day 9|:x:|:x:|
 |Day 10|:x:|:x:|
