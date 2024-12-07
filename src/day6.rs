@@ -1,5 +1,7 @@
 use aoc_runner_derive::aoc;
 use aoc_runner_derive::aoc_generator;
+use rayon::prelude::*;
+use std::cell::{OnceCell, RefCell};
 use std::collections::HashSet;
 
 // Bump this up if it crashes due to index out of range issues.
@@ -171,21 +173,36 @@ fn part1(input: &Map) -> usize {
 
 #[aoc(day6, part2)]
 fn part2(input: &Map) -> usize {
-    let mut input = input.clone();
-    let mut visited = HashSet::new();
-    let mut cycles = 0;
-    for position in get_distinct_positions(&input) {
-        if position != input.guard.0 {
-            let (row, column) = position;
-            let index = row * input.number_of_columns + column;
-            input.obstacles[index] = true; // place obstacle.
-            if has_cycle(&input, &mut visited) {
-                cycles += 1;
-            }
-            input.obstacles[index] = false; // unplace obstacle.
-        }
+    thread_local! {
+        static VISITED: RefCell<HashSet<((usize, usize), Direction)>> = RefCell::new(HashSet::new());
+        static INPUT: RefCell<OnceCell<Map>> = RefCell::new(OnceCell::new());
     }
-    cycles
+
+    get_distinct_positions(&input)
+        .par_iter()
+        .map(|position| {
+            if *position != input.guard.0 {
+                INPUT.with_borrow_mut(|input_mut| {
+                    let input_mut_ref = input_mut.get_mut();
+                    if input_mut_ref.is_none() {
+                        let _ = input_mut.set(input.clone());
+                    }
+                    let input = input_mut.get_mut().unwrap();
+                    let (row, column) = *position;
+                    let index = row * input.number_of_columns + column;
+                    input.obstacles[index] = true; // place obstacle.
+                    let return_value =
+                        VISITED.with_borrow_mut(
+                            |visited| if has_cycle(&input, visited) { 1 } else { 0 },
+                        );
+                    input.obstacles[index] = false; // unplace obstacle.
+                    return_value
+                })
+            } else {
+                0
+            }
+        })
+        .sum()
 }
 
 #[cfg(test)]
